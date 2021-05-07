@@ -1,0 +1,102 @@
+ else if(!strcmp(buffer,"Manage\r\n")){
+                char path[512];
+                char us[128];
+                strcpy(us,us_name);
+                us[strlen(us)-2]='\0';
+                strcpy(path,us);
+                // path[strlen(path)-1]="\0";
+                strcat(path,"/mymailbox.mail");
+                FILE *fp1=fopen(path,"r");
+             
+                char inboxList[10][512];
+                int i=0;
+                while(i<10){
+                    inboxList[i][0]='!';
+                    i++;
+                }
+                char buf[100], buf1[100], buf2[100], buf3[100];
+	char *token1, *token2, *token3, *token4, *token5, *token6;
+	i = 0;
+	while(1) {
+		if(fgets(buf, 100, fp1) == NULL)
+			break;
+		if(strncmp(buf, "From:", 5) == 0) {
+			token1 = strtok(buf, ": ");
+			token2 = strtok(NULL, ": ");
+			strcpy(buf1, token2);
+		}
+		else if(strncmp(buf, "Subject:", 8) == 0) {
+			token3 = strtok(buf, ": ");
+			token4 = strtok(NULL, ":");
+			strcpy(buf2, token4);
+		}
+		else if(strncmp(buf, "Received:", 9) == 0) {
+			token5 = strtok(buf, ": ");
+			token6 = strtok(NULL, ":");
+			strcpy(buf3, token6);
+		}
+		else if(strncmp(buf, ".", 1) == 0) {
+			bzero(inboxList[i], 256);
+			sprintf(inboxList[i], "%s %s %s", buf1, buf2, buf3);
+			i++;
+		}
+	}
+    fclose(fp1);
+    fp1=fopen(path,"r");
+	send(conn_fd, &inboxList, sizeof(inboxList), 0);
+    bzero(buffer, sizeof(buffer));
+    temp = recv(conn_fd, buffer, sizeof(buffer), 0);
+    if(strncmp(buffer,"inv",3)){
+    // printf("%s-%d\n",buffer,strlen(buffer));
+                 char f_inboxList[10][512];
+                i=0;
+                while(i<10){
+                    f_inboxList[i][0]='!';
+                    i++;
+                }
+    // printf("%s\n",path);
+    char buf0[100],buf4[100];       
+    bzero(buf,100);bzero(buf1,100);bzero(buf2,100);bzero(buf3,100);bzero(buf4,100);
+    bzero(buf0,100);
+
+    char txt[1024];char *token7,*token8;
+    bzero(txt,1024);
+
+	i = 0;
+	while(1) {
+		if(fgets(buf, 100, fp1) == NULL)
+			break;
+		if(strncmp(buf, "From:", 5) == 0) {
+			// token1 = strtok(buf, ": ");
+			// token2 = strtok(NULL, ": ");
+			strcpy(buf1, buf);
+		}
+        if(strncmp(buf, "To:", 3) == 0) {
+			// token7 = strtok(buf, ": ");
+			// token8 = strtok(NULL, ": ");
+			strcpy(buf0, buf);
+		}
+		else if(strncmp(buf, "Subject:", 8) == 0) {
+			// token3 = strtok(buf, ": ");
+			// token4 = strtok(NULL, ":");
+			strcpy(buf2, buf);
+		}
+		else if(strncmp(buf, "Received:", 9) == 0) {
+			// token5 = strtok(buf, ": ");
+			// token6 = strtok(NULL, ":");
+			strcpy(buf3, buf);
+		}
+		else if(strncmp(buf, ".", 1) == 0) {
+			bzero(f_inboxList[i], 256);
+			sprintf(f_inboxList[i], "%s %s %s %s %s", buf1,buf0, buf2, buf3,buf4);
+			i++;
+		}
+        else{
+            strcpy(buf4,buf);
+        }
+        // printf("%s",buf);
+	}
+    send(conn_fd, &f_inboxList, sizeof(f_inboxList), 0);
+    fclose(fp1);
+    bzero(buf,sizeof(buf));
+    }

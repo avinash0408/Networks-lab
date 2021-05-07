@@ -1,0 +1,104 @@
+www.nitc.ac.in-cname
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+www.nitc.ac.in	canonical name = cnet.nitc.ac.in.
+
+Authoritative answers can be found from:
+
+
+--------------------------
+google.com-aaaa
+Server:		ns1.google.com.
+Address:	216.239.32.10#53
+
+Name:	google.com
+Address: 2404:6800:4007:815::200e
+
+
+--------------------------
+nitc.ac.in-a
+Server:		ebox.nitc.ac.in.
+Address:	14.139.185.118#53
+
+Name:	nitc.ac.in
+Address: 14.139.185.121
+
+
+--------------------------
+nitc.ac.in-ns
+Server:		ebox.nitc.ac.in.
+Address:	14.139.185.118#53
+
+nitc.ac.in	nameserver = ebox.nitc.ac.in.
+nitc.ac.in	nameserver = dns.nitc.ac.in.
+
+
+--------------------------
+youtube.com-aaaa
+Server:		ns1.google.com.
+Address:	216.239.32.10#53
+
+Name:	youtube.com
+Address: 2404:6800:4007:82b::200e
+
+
+--------------------------
+www.amazon.com-cname
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+www.amazon.com	canonical name = tp.47cf2c8c9-frontier.amazon.com.
+
+Authoritative answers can be found from:
+
+
+
+wwww.amazon.com-a
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+wwww.amazon.com	canonical name = rewrite.amazon.com.
+Name:	rewrite.amazon.com
+Address: 72.21.210.29
+
+
+--------------------------
+www.amazon.com-aaaa
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+www.amazon.com	canonical name = tp.47cf2c8c9-frontier.amazon.com.
+tp.47cf2c8c9-frontier.amazon.com	canonical name = d3ag4hukkh62yn.cloudfront.net.
+
+
+--------------------------
+www.amazon.com-ns
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+www.amazon.com	canonical name = tp.47cf2c8c9-frontier.amazon.com.
+tp.47cf2c8c9-frontier.amazon.com	canonical name = d3ag4hukkh62yn.cloudfront.net.
+d3ag4hukkh62yn.cloudfront.net	nameserver = ns-1144.awsdns-15.org.
+d3ag4hukkh62yn.cloudfront.net	nameserver = ns-824.awsdns-39.net.
+d3ag4hukkh62yn.cloudfront.net	nameserver = ns-2021.awsdns-60.co.uk.
+d3ag4hukkh62yn.cloudfront.net	nameserver = ns-130.awsdns-16.com.
+
+Authoritative answers can be found from:
+
+
+--------------------------
+www.google.com-aaaa
+Server:		ns4.google.com.
+Address:	216.239.38.10#53
+
+Name:	www.google.com
+Address: 2404:6800:4007:818::2004
+
+
+--------------------------

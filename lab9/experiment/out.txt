@@ -1,0 +1,8 @@
+Server:		ns4.google.com.
+Address:	216.239.38.10#53
+
+youtube.com	nameserver = ns2.google.com.
+youtube.com	nameserver = ns4.google.com.
+youtube.com	nameserver = ns3.google.com.
+youtube.com	nameserver = ns1.google.com.
+

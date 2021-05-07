@@ -1,0 +1,6 @@
+Server:		ns4.google.com.
+Address:	216.239.38.10#53
+
+Name:	www.google.com
+Address: 2404:6800:4007:818::2004
+
